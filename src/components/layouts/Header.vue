@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="px-4 sm:px-6 lg:px-8">
         <header class="header flex justify-between items-center">
             <div class="header__logo md:flex md:items-center md:gap-12">
                 <a href="#" class="text-lg flex font-semibold">
@@ -12,20 +12,26 @@
             <div class="hidden md:block">
                 <nav aria-label="Global" class="header__navbar">
                     <ul class="header__list flex items-center gap-5 text-md">
-                        <li class="header__item">Product</li>
-                        <li class="header__item">Feature</li>
-                        <li class="header__item">Marketplace</li>
-                        <li class="header__item">Company</li>
+                        <li class="header__item cursor-pointer transition hover:text-teal-600">Product</li>
+                        <li class="header__item cursor-pointer transition hover:text-teal-600">Feature</li>
+                        <li class="header__item cursor-pointer transition hover:text-teal-600">Marketplace</li>
+                        <li class="header__item cursor-pointer transition hover:text-teal-600">Company</li>
                     </ul>
                 </nav>
             </div>
-            <div class="header__auth">
-                <span>
+            <div class="header__auth flex">
+                <span class="flex cursor-pointer hover:text-teal-600 transition">
                     Log in
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-0.5 translate-y-0.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                     </svg>
                 </span>
+
+                <div class="header__navbar-mobile block md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-0.5 translate-y-0.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </div>
             </div>
         </header>
     </div>
