@@ -1,0 +1,122 @@
+export const courses = [
+    {
+      "id": 1,
+      "name": "Vue.js Cơ Bản Đến Nâng Cao",
+      "image": "vue.jpg",
+      "description": "Khóa học toàn diện giúp bạn làm chủ Vue.js 3, hiểu rõ component-based architecture, reactive data, lifecycle hooks, và state management với Pinia hoặc Vuex.",
+      "level": "Trung cấp",
+      "price": 599000,
+      "rating": 4.8,
+      "students": 1250,
+      "tags": ["Frontend", "JavaScript", "Vue3"],
+      "created_at": "2025-07-15T09:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "ReactJS Toàn Tập Qua Dự Án Thực Tế",
+      "image": "react.jpg",
+      "description": "Khóa học ReactJS từ cơ bản đến nâng cao. Bao gồm các chủ đề như component function, hooks, context API, routing, và tối ưu performance.",
+      "level": "Nâng cao",
+      "price": 699000,
+      "rating": 4.9,
+      "students": 2140,
+      "tags": ["Frontend", "React", "SPA"],
+      "created_at": "2025-06-10T08:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Laravel Pro 2025 - Xây Dựng Hệ Thống API Chuẩn Doanh Nghiệp",
+      "image": "laravel.jpg",
+      "description": "Khóa học Laravel tập trung vào backend: xây dựng RESTful API, phân quyền (role & permission), queue, event, job, và tối ưu hiệu năng.",
+      "level": "Chuyên sâu",
+      "price": 799000,
+      "rating": 4.7,
+      "students": 1860,
+      "tags": ["Backend", "Laravel", "API"],
+      "created_at": "2025-05-20T12:45:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Tailwind CSS Mastery - Thiết Kế Giao Diện Hiện Đại",
+      "image": "tailwind.jpg",
+      "description": "Khóa học hướng dẫn sử dụng Tailwind CSS chuyên sâu để thiết kế UI hiện đại, responsive và tối ưu code cho performance.",
+      "level": "Cơ bản",
+      "price": 399000,
+      "rating": 4.6,
+      "students": 950,
+      "tags": ["Frontend", "UI", "CSS"],
+      "created_at": "2025-04-28T14:20:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Node.js & Express API - Backend Từ A Đến Z",
+      "image": "node.jpg",
+      "description": "Khóa học giúp bạn hiểu cách xây dựng hệ thống API mạnh mẽ với Express.js, kết nối MongoDB, xử lý JWT Auth và triển khai thực tế trên server.",
+      "level": "Trung cấp",
+      "price": 649000,
+      "rating": 4.8,
+      "students": 1310,
+      "tags": ["Backend", "Node.js", "Express"],
+      "created_at": "2025-04-05T10:10:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Docker & DevOps Cho Lập Trình Viên",
+      "image": "docker.jpg",
+      "description": "Học cách đóng gói ứng dụng với Docker, thiết lập CI/CD pipeline, quản lý môi trường và deploy tự động.",
+      "level": "Nâng cao",
+      "price": 899000,
+      "rating": 4.9,
+      "students": 980,
+      "tags": ["DevOps", "Docker", "CI/CD"],
+      "created_at": "2025-03-12T11:15:00Z"
+    },
+    {
+      "id": 7,
+      "name": "SQL & Database Optimization",
+      "image": "sql.jpg",
+      "description": "Khóa học SQL giúp bạn viết query tối ưu, hiểu indexing, joins, transaction, và tuning hiệu năng database MySQL & PostgreSQL.",
+      "level": "Trung cấp",
+      "price": 499000,
+      "rating": 4.5,
+      "students": 870,
+      "tags": ["Database", "SQL", "Performance"],
+      "created_at": "2025-02-10T09:00:00Z"
+    },
+    {
+      "id": 8,
+      "name": "TypeScript Cho Dự Án Thực Tế",
+      "image": "type.jpg",
+      "description": "Hiểu rõ TypeScript, typing nâng cao, generics, decorators và tích hợp với Vue/React để giảm lỗi runtime và tăng maintainability.",
+      "level": "Nâng cao",
+      "price": 579000,
+      "rating": 4.7,
+      "students": 740,
+      "tags": ["Frontend", "Backend", "TypeScript"],
+      "created_at": "2025-01-22T10:00:00Z"
+    },
+    {
+      "id": 9,
+      "name": "Git & GitHub Workflow",
+      "image": "git.jpg",
+      "description": "Khóa học này giúp bạn thành thạo Git, quản lý branch, merge, rebase, tag, pull request và cách làm việc nhóm hiệu quả trên GitHub.",
+      "level": "Cơ bản",
+      "price": 299000,
+      "rating": 4.9,
+      "students": 2050,
+      "tags": ["Version Control", "Git", "Collaboration"],
+      "created_at": "2024-12-15T08:30:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Fullstack Web Developer 2025",
+      "image": "fullstack.jpg",
+      "description": "Khóa học tổng hợp giúp bạn trở thành lập trình viên fullstack: frontend (Vue/React) + backend (Laravel/Node) + deploy production.",
+      "level": "Chuyên sâu",
+      "price": 1299000,
+      "rating": 5.0,
+      "students": 3150,
+      "tags": ["Fullstack", "Web Development", "Career Path"],
+      "created_at": "2024-11-01T13:00:00Z"
+    }
+]

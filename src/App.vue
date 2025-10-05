@@ -12,9 +12,10 @@
 <script setup>
 import Header from '@/components/layouts/Header.vue';
 import Footer from '@/components/layouts/Footer.vue';
-import Table from '@/components/table/Table.vue';
+import Table from '@/components/Ui/table/CourseTable.vue';
+
 </script>
 
 <style lang="scss" scoped>
-
+    
 </style>
