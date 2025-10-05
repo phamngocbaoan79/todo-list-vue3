@@ -8,7 +8,7 @@ export const courses = [
       "price": 599000,
       "rating": 4.8,
       "students": 1250,
-      "tags": ["Frontend", "JavaScript", "Vue3"],
+      "tags": ["Frontend", "SPA"],
       "created_at": "2025-07-15T09:30:00Z"
     },
     {
@@ -20,7 +20,7 @@ export const courses = [
       "price": 699000,
       "rating": 4.9,
       "students": 2140,
-      "tags": ["Frontend", "React", "SPA"],
+      "tags": ["Frontend", "SPA"],
       "created_at": "2025-06-10T08:00:00Z"
     },
     {
@@ -32,7 +32,7 @@ export const courses = [
       "price": 799000,
       "rating": 4.7,
       "students": 1860,
-      "tags": ["Backend", "Laravel", "API"],
+      "tags": ["Backend", "API"],
       "created_at": "2025-05-20T12:45:00Z"
     },
     {
@@ -56,7 +56,7 @@ export const courses = [
       "price": 649000,
       "rating": 4.8,
       "students": 1310,
-      "tags": ["Backend", "Node.js", "Express"],
+      "tags": ["Backend"],
       "created_at": "2025-04-05T10:10:00Z"
     },
     {
@@ -92,7 +92,7 @@ export const courses = [
       "price": 579000,
       "rating": 4.7,
       "students": 740,
-      "tags": ["Frontend", "Backend", "TypeScript"],
+      "tags": ["Frontend", "Backend"],
       "created_at": "2025-01-22T10:00:00Z"
     },
     {
@@ -116,7 +116,7 @@ export const courses = [
       "price": 1299000,
       "rating": 5.0,
       "students": 3150,
-      "tags": ["Fullstack", "Web Development", "Career Path"],
+      "tags": ["Web Development"],
       "created_at": "2024-11-01T13:00:00Z"
     }
 ]

@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 sm:px-6 lg:px-8">
+    <div class="px-4 sm:px-6 lg:px-8 pt-2">
         <header class="header flex justify-between items-center">
             <div class="header__logo md:flex md:items-center md:gap-12">
                 <a href="#" class="text-lg flex font-semibold">
