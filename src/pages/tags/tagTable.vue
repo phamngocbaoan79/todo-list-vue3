@@ -11,12 +11,13 @@
                 <td class="px-6 py-4 text-teal-600 font-bold">
                     {{ tag.color }}
                 </td>
-                <td class="px-6 py-4 text-center">
-                    <button
-                        class="bg-teal-500 hover:bg-teal-600 text-white text-sm px-3 py-1 rounded-md"
-                    >
+                <td class="px-6 py-4 text-center flex">
+                    <BaseButton mode="primary" type="button" size="sm">
                         Edit
-                    </button>
+                    </BaseButton>
+                    <BaseButton class="ml-2" mode="flat" type="button" size="sm">
+                        Delete
+                    </BaseButton>
                 </td>
             </tr>
             </template>
@@ -25,6 +26,7 @@
 
 <script setup>
 import BaseTable from '@/components/Ui/BaseTable.vue';
+import BaseButton from '@/components/Ui/BaseButton.vue';
 
 defineProps({
   tags: {

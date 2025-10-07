@@ -2,20 +2,28 @@
   <div class="flex flex-col min-h-screen mx-auto max-w-screen-xl">
     <Header />
 
+    <BaseButton mode="primary" type="button" size="md">
+        Add new
+    </BaseButton>
+
     <main class="flex-1">
       <div class="flex justify-center gap-4 mt-8">
-        <button 
+        <BaseButton 
+          variant="tab"
           @click="active = 'course'" 
-          :class="buttonClass('course')"
+          :active="active === 'course'"
         >
           Course
-        </button>
-        <button 
+        </BaseButton>
+
+        <BaseButton 
+          variant="tab"
           @click="active = 'tag'" 
-          :class="buttonClass('tag')"
+          :active="active === 'tag'"
         >
           Tag
-        </button>
+        </BaseButton>
+
       </div>
 
       <!-- Mỗi lần đổi tag thì dynamic cpn sẽ rm cái cpn trước nên ở App phải Mount lại 1 lần nữa -->
@@ -28,7 +36,6 @@
         />
       </keep-alive>
     </main>
-
     <Footer />
   </div>
 </template>
@@ -39,6 +46,7 @@ import Header from '@/components/layouts/Header.vue'
 import Footer from '@/components/layouts/Footer.vue'
 import { courses as coursesData } from '@/data/courses'
 import { tags as tagsData } from '@/data/tags'
+import BaseButton from './components/Ui/BaseButton.vue'
 
 import CourseTable from '@/pages/courses/courseTable.vue'
 import TagTable from '@/pages/tags/tagTable.vue'
@@ -56,10 +64,4 @@ const activeComponent = computed(() => {
   return active.value === 'course' ? CourseTable : TagTable
 })
 
-const buttonClass = (type) => [
-    'px-4 py-2 rounded-md font-semibold transition',
-    active.value === type
-    ? 'bg-teal-600 text-white shadow'
-    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-]
 </script>
