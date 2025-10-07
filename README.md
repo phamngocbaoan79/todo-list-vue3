@@ -24,17 +24,14 @@ Dự án sử dụng **Vue.js 3** với các tính năng cơ bản như CRUD.
 
 ---
 
-## 🌐 API
+## API
 Dự án thao tác với API:
 > 🔗 [https://github.com/phamngocbaoan79/todo-list-api](https://github.com/phamngocbaoan79/todo-list-api)
 
 ---
 
-## 🚀 Project Setup
+## Project Setup And Run
 
 ```bash
 npm install
-
-
-```bash
 npm run dev
