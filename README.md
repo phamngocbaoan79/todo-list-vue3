@@ -1,25 +1,40 @@
-# Vue3-advanced-todo
+# Vue3 Advanced Todo
 
-Dự án sử dụng vuejs version 3 với các tính năng cơ bản như crud
-- Dự án với mục đích tổng hợp các kiến thức cơ bản của vue như emit, slot, teleport, component, dynamic component, các reactive như ref, reactive
-- Dự án tập trung tổ chức thư mục chia component rõ ràng, tái sử dụng code
-- Công nghệ hỗ trợ tailwind css
-- Một số package cài thêm như:
-+ scss: npm install -D scss
-+ tối ưu path: npm install -D path
-+ eslint npm install eslint --save-dev, npx eslint --init
-+ axios
-- Thao tác với api:
-+ linl api: https://github.com/phamngocbaoan79/todo-list-api
+Dự án sử dụng **Vue.js 3** với các tính năng cơ bản như CRUD.
 
-## Project Setup
+## 🎯 Mục tiêu dự án
+- Tổng hợp và ôn tập các kiến thức nền tảng của Vue 3:
+  - `emit`, `slot`, `teleport`
+  - `component`, `dynamic component`
+  - Reactive API: `ref`, `reactive`
+- Tổ chức thư mục rõ ràng, dễ bảo trì và tái sử dụng code.
+- Ứng dụng **Tailwind CSS** để xây dựng giao diện hiện đại, gọn nhẹ.
 
-```sh
+---
+
+## ⚙️ Công nghệ & Package hỗ trợ
+
+| Loại | Gói / Công nghệ | Ghi chú |
+|------|------------------|---------|
+| UI | Tailwind CSS | Styling nhanh, tiện |
+| CSS Preprocessor | `scss` (`npm install -D scss`) | |
+| Path alias | `path` (`npm install -D path`) | Tối ưu import |
+| Linting | `eslint` (`npm install eslint --save-dev && npx eslint --init`) | Chuẩn hoá code |
+| HTTP client | `axios` | Gọi API |
+
+---
+
+## 🌐 API
+Dự án thao tác với API:
+> 🔗 [https://github.com/phamngocbaoan79/todo-list-api](https://github.com/phamngocbaoan79/todo-list-api)
+
+---
+
+## 🚀 Project Setup
+
+```bash
 npm install
-```
 
-### Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
-```
