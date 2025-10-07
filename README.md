@@ -36,5 +36,5 @@ Dự án thao tác với API:
 npm install
 
 
-```sh
+```bash
 npm run dev
