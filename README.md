@@ -32,6 +32,10 @@ Dự án thao tác với API:
 
 ## Project Setup And Run
 
-```bash
+```sh
 npm install
+```
+
+```sh
 npm run dev
+```
