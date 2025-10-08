@@ -2,12 +2,14 @@
   <div class="flex flex-col min-h-screen mx-auto max-w-screen-xl">
     <Header />
 
-    <BaseButton mode="primary" type="button" size="md">
+    <div class="block mt-8">
+      <BaseButton mode="primary" type="button" size="md">
         Add new
-    </BaseButton>
+      </BaseButton>
+    </div>
 
     <main class="flex-1">
-      <div class="flex justify-center gap-4 mt-8">
+      <div class="flex justify-center gap-4">
         <BaseButton 
           variant="tab"
           @click="active = 'course'" 
