@@ -27,10 +27,10 @@
           </div>
         </td>
         <td class="px-6 py-4 text-center flex">
-          <BaseButton mode="primary" type="button" size="sm">
+          <BaseButton mode="primary" type="button" size="sm" @click="$emit('edit', course)">
             Edit
           </BaseButton>
-          <BaseButton class="ml-2" mode="flat" type="button" size="sm">
+          <BaseButton class="ml-2" mode="flat" type="button" size="sm" @click="$emit('delete', course)">
             Delete
           </BaseButton>
         </td>

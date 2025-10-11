@@ -19,6 +19,7 @@ const props = defineProps({
   type: { type: String, default: 'button' },
   mode: { type: String, default: 'primary' },
   size: { type: String, default: 'md' },
+  // variant: tab hay nút
   variant: { type: String, default: 'normal' },
   active: { type: Boolean, default: false }
 })

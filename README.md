@@ -7,7 +7,8 @@ Dự án sử dụng **Vue.js 3** với các tính năng cơ bản như CRUD.
   - `emit`, `slot`, `teleport`
   - `component`, `dynamic component`
   - Reactive API: `ref`, `reactive`
-- Tổ chức thư mục rõ ràng, dễ bảo trì và tái sử dụng code.
+  - Không sử dụng `vue route`
+- Dự án tập trung tổ chức thư mục rõ ràng, dễ bảo trì và tái sử dụng code.
 - Ứng dụng **Tailwind CSS** để xây dựng giao diện hiện đại, gọn nhẹ.
 
 ---
@@ -21,14 +22,6 @@ Dự án sử dụng **Vue.js 3** với các tính năng cơ bản như CRUD.
 | Path alias | `path` (`npm install -D path`) | Tối ưu import |
 | Linting | `eslint` (`npm install eslint --save-dev && npx eslint --init`) | Chuẩn hoá code |
 | HTTP client | `axios` | Gọi API |
-
----
-
-## API
-Dự án thao tác với API:
-> 🔗 [https://github.com/phamngocbaoan79/todo-list-api](https://github.com/phamngocbaoan79/todo-list-api)
-
----
 
 ## Project Setup And Run
 
