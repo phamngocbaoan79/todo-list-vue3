@@ -12,14 +12,6 @@
         <td class="px-6 py-4">
             {{ course.name }}
         </td>
-        <td class="px-6 py-4">
-          <img
-            v-if="course.image"
-            :src="`/src/assets/images/${course.image}`"
-            class="w-24 h-14 object-cover rounded"
-          />
-          <span v-else class="text-gray-400 text-sm">No image</span>
-        </td>
         <td class="px-6 py-4 text-teal-600 font-bold">
           {{ formatPrice(course.price) }}
         </td>
@@ -61,7 +53,6 @@ defineProps({
 const headers = [
   { label: '#', key: 'index' },
   { label: 'Name', key: 'name' },
-  { label: 'Image', key: 'image' },
   { label: 'Price', key: 'price' },
   { label: 'Tag', key: 'tags' },
   { label: 'Action', key: 'action' },
