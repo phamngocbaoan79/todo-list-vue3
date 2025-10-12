@@ -1,11 +1,27 @@
 <template>
-  <BaseTable :headers="headers" :items="courses">
+  <div class="mb-3 flex justify-between items-center">
+    <BaseButton
+        mode="danger"
+        size="sm"
+        type="button"
+        @click="deleteSelected"
+        :disabled="selectedIds.length === 0"
+      >
+        Delete selected ({{ selectedIds.length }})
+    </BaseButton>
+  </div>
+  <BaseTable :headers="headers" :items="courses" @toggle-select-all="toggleSelectAll">
     <template #row="{ items }">
       <tr
         v-for="course in items"
         :key="course.id"
         class="hover:bg-gray-50 transition-all"
       >
+        <td class="w-4 h-4 cursor-pointer">
+          <input type="checkbox"
+            v-model="selectedIds"
+            :value="course.id">
+        </td>
         <td class="px-6 py-4">
             {{ course.id }}
         </td>
@@ -42,13 +58,16 @@
 <script setup>
 import BaseTable from '@/components/Ui/BaseTable.vue';
 import BaseButton from '@/components/Ui/BaseButton.vue';
+import { ref } from 'vue';
 
-defineProps({
+const props = defineProps({
   courses: {
     type: Array,
     required: true
   }
 })
+
+const emit = defineEmits(['edit', 'delete', 'delete-selected'])
 
 const headers = [
   { label: '#', key: 'index' },
@@ -58,6 +77,22 @@ const headers = [
   { label: 'Action', key: 'action' },
 ];
 
+const selectedIds = ref([]);
+
+const toggleSelectAll = (checked) => {
+    if(checked) {
+      selectedIds.value = props.courses.map(c => c.id)
+    } else {
+      selectedIds.value = [];
+    }
+}
+
+const deleteSelected = () => {
+  if (selectedIds.value.length > 0) {
+    emit('delete-selected', selectedIds.value)
+    selectedIds.value = []
+  }
+}
 const formatPrice = (price) =>
   new Intl.NumberFormat('vi-VN', {
     style: 'currency',

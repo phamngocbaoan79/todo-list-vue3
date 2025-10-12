@@ -34,6 +34,7 @@
           @create="onCreate"
           @submit="onSubmit"
           @delete="onDelete"
+          @delete-selected="onDeleteSelected"
         />
       </keep-alive>
     </main>
@@ -135,5 +136,18 @@ const onSubmit = (data) => {
 
     state[active.value].viewMode = 'table';
     state[active.value].selectedItem = null;
+}
+
+const onDeleteSelected = (ids) => {
+  const tab = active.value
+
+  if (tab === 'tag') {
+    tags.value = tags.value.filter(t => !ids.includes(t.id))
+  } else if (tab === 'course') {
+    courses.value = courses.value.filter(c => !ids.includes(c.id))
+  }
+
+  state[tab].viewMode = 'table'
+  state[tab].selectedItem = null
 }
 </script>
