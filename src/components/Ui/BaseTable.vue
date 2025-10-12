@@ -7,7 +7,7 @@
           <th class="px-4 py-3 border-b border-teal-500 text-center">
             <input
               type="checkbox"
-              class="w-4 h-4 cursor-pointer"
+              class="w-4 h-4 cursor-pointer text-center"
               v-model="selectAll"
               @change="toggleSelectAll"
             />

@@ -64,7 +64,6 @@ const deleteSelected = () => {
 }
 
 const headers = [
-    { label: '', key: 'checkbox' },
     { label: 'Id', key: 'id' },
     { label: 'Name', key: 'name' },
     { label: 'Color', key: 'color' },

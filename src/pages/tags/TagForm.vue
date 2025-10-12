@@ -1,4 +1,15 @@
 <template>
+    <BaseDialog v-if="inputInvalid" title="Invalid Input">
+        <template #default>
+            <p>Input can not be null</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, maiores iure tempore ipsum id ad perspiciatis soluta, officiis ab quo accusantium a eaque. Fugit voluptates vero molestiae dolore quam voluptatem!</p>
+        </template>
+        <template #actions>
+            <BaseButton @click="confirmErr">
+                Oke
+            </BaseButton>
+        </template>
+    </BaseDialog>
     <BaseButton mode="flat" type="button" size="sm" @click="$emit('back')">
         Quay lại
     </BaseButton>
@@ -15,7 +26,6 @@
             <input type="text" 
                 class="border rounded px-3 py-2 w-full" 
                 v-model="form.name"
-                required
                 placeholder="Enter the name tag">
         </div>
 
@@ -26,7 +36,6 @@
             <input type="text"
                 class="border rounded px-3 py-2 w-full"
                 v-model="form.color"
-                required
                 placeholder="Enter the color tag">
         </div>
 
@@ -38,7 +47,8 @@
 
 <script setup>
 import BaseButton from '@/components/Ui/BaseButton.vue';
-import { defineProps, reactive, watch } from 'vue';
+import { defineProps, reactive, ref, watch } from 'vue';
+import BaseDialog from '@/components/Ui/BaseDialog.vue';
 
 const props = defineProps({
     isEdit : Boolean,
@@ -53,6 +63,8 @@ const form = reactive({
     color: '',
     created_at: ''
 })
+
+const inputInvalid = ref(false);
 
 watch([() => props.modelValue, () => props.isEdit],
 ([newVal, isEdit]) => {
@@ -70,7 +82,16 @@ watch([() => props.modelValue, () => props.isEdit],
   { immediate: true }
 )
 
-const handleSubmit = () => {{
-    emit('submit', { ...form, isEdit: props.isEdit})
-}}
+const confirmErr = () => {
+    inputInvalid.value = false;
+}
+
+const handleSubmit = () => {
+    if (form.name === '' || form.color === '') {
+        inputInvalid.value = true;
+        return;
+    }
+    emit('submit', { ...form, isEdit: props.isEdit })
+}
+
 </script>

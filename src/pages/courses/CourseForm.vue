@@ -1,4 +1,15 @@
 <template>
+    <BaseDialog v-if="inputInvalid" title="Invalid Input">
+        <template #default>
+            <p>Input can not be null</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, maiores iure tempore ipsum id ad perspiciatis soluta, officiis ab quo accusantium a eaque. Fugit voluptates vero molestiae dolore quam voluptatem!</p>
+        </template>
+        <template #actions>
+            <BaseButton @click="confirmErr">
+                Oke
+            </BaseButton>
+        </template>
+    </BaseDialog>
     <BaseButton mode="flat" type="button" size="sm" @click="$emit('back')">
         Quay lại
     </BaseButton>
@@ -20,14 +31,14 @@
         <div>
             <label for="name" class="block text-gray-700 mb-1">Name</label>
             <input type="text" class="border rounded px-3 py-2 w-full" 
-            v-model="form.name" required
+            v-model="form.name"
             placeholder="Enter the name course">
         </div>
 
         <div>
             <label for="price" class="block text-gray-700 mb-1">Price</label>
             <input type="number" class="border rounded px-3 py-2 w-full" 
-            v-model="form.price" required
+            v-model="form.price"
             placeholder="Enter the price course">
         </div>
 
@@ -57,6 +68,7 @@
 import BaseButton from '@/components/Ui/BaseButton.vue';
 import { tags as tagsData } from '@/data/tags.js';
 import { onMounted, reactive, ref, watch } from 'vue';
+import BaseDialog from '@/components/Ui/BaseDialog.vue';
 
 const props = defineProps({
     isEdit: Boolean,
@@ -66,6 +78,7 @@ const props = defineProps({
 const emit = defineEmits(['submit', 'back']);
 
 const tags = ref([]);
+const inputInvalid =  ref(false)
 
 const form = reactive({
     id: '',
@@ -99,7 +112,16 @@ watch(
   { immediate: true }
 )
 
-const handleSubmit = () => {
-  emit('submit', { ...form, isEdit: props.isEdit })
+const confirmErr = () => {
+    inputInvalid.value = false;
 }
+
+const handleSubmit = () => {
+    if (form.name === '' || form.price === '') {
+        inputInvalid.value = true;
+        return;
+    }
+    emit('submit', { ...form, isEdit: props.isEdit })
+}
+
 </script>
