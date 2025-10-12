@@ -38,7 +38,7 @@
 
 <script setup>
 import BaseButton from '@/components/Ui/BaseButton.vue';
-import { defineProps, reactive } from 'vue';
+import { defineProps, reactive, watch } from 'vue';
 
 const props = defineProps({
     isEdit : Boolean,
@@ -53,6 +53,22 @@ const form = reactive({
     color: '',
     created_at: ''
 })
+
+watch([() => props.modelValue, () => props.isEdit],
+([newVal, isEdit]) => {
+  if (isEdit && newVal) {
+      Object.assign(form, newVal)
+    } else {
+        form.id = '',
+        form.name = '',
+        form.color = '',
+        form.created_at = ''
+    }
+  },
+  // bình thường watch() chỉ chạy khi có thay đổi.
+  // thêm cái này thì nó watch ngay khi đc mount
+  { immediate: true }
+)
 
 const handleSubmit = () => {{
     emit('submit', { ...form, isEdit: props.isEdit})

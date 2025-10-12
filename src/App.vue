@@ -23,13 +23,18 @@
       <!-- Mỗi lần đổi tag thì dynamic cpn sẽ rm cái cpn trước nên ở App phải Mount lại 1 lần nữa -->
       <!-- => keep alive tránh rm => ở 2 file cpn k cần mount (phải khai báo defineProps) -->
       <keep-alive>
-        <component :is="activeComponent" :courses="courses" :tags="tags" :isEdit="state[active].viewMode == 'edit'"
-          :modelValue="state[active].selectedItem" 
-            @edit="onEdit"
-            @back="onBack"
-            @create="onCreate"
-            @submit="onSubmit"
-           />
+        <component
+          :is="activeComponent"
+          :courses="courses"
+          :tags="tags"
+          :isEdit="state[active].viewMode === 'edit'"
+          :modelValue="state[active].selectedItem"
+          @edit="onEdit"
+          @back="onBack"
+          @create="onCreate"
+          @submit="onSubmit"
+          @delete="onDelete"
+        />
       </keep-alive>
     </main>
     <Footer />
@@ -89,6 +94,18 @@ const onBack = () => {
 const onCreate = () => {
   state[active.value].selectedItem = null;
   state[active.value].viewMode = 'create';
+}
+
+const onDelete = (item) => {
+    const tab = active.value;
+    if (tab === 'tag') {
+      tags.value = tags.value.filter(t => t.id !== item.id);
+    } else if (tab === 'course') {
+      courses.value = courses.value.filter(c => c.id !== item.id);
+    }
+    
+    state[tab].viewMode = 'table';
+    state[tab].selectedItem = null;
 }
 
 const onSubmit = (data) => {

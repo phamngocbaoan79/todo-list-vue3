@@ -56,7 +56,7 @@
 <script setup>
 import BaseButton from '@/components/Ui/BaseButton.vue';
 import { tags as tagsData } from '@/data/tags.js';
-import { onMounted, reactive, ref } from 'vue';
+import { onMounted, reactive, ref, watch } from 'vue';
 
 const props = defineProps({
     isEdit: Boolean,
@@ -80,6 +80,24 @@ const form = reactive({
 onMounted(() => {
     tags.value = tagsData
 })
+
+watch(
+  [() => props.modelValue, () => props.isEdit],
+  ([newVal, isEdit]) => {
+    if (isEdit && newVal) {
+      Object.assign(form, newVal)
+    } else {
+      form.id = ''
+      form.tag_id = ''
+      form.name = ''
+      form.price = ''
+      form.description = ''
+      form.level = 'Sơ cấp'
+      form.created_at = ''
+    }
+  },
+  { immediate: true }
+)
 
 const handleSubmit = () => {
   emit('submit', { ...form, isEdit: props.isEdit })
